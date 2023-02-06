@@ -71,12 +71,65 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+Studio.destroy_all
+Rails.logger.info "------------------------"
+Rails.logger.info "----- FRESH START! -----"
+Rails.logger.info "------------------------"
+
+Movie.destroy_all
+Rails.logger.info "------------------------"
+Rails.logger.info "----- FRESH START! -----"
+Rails.logger.info "------------------------"
+
+Actor.destroy_all
+Rails.logger.info "------------------------"
+Rails.logger.info "----- FRESH START! -----"
+Rails.logger.info "------------------------"
+
+Role.destroy_all
+Rails.logger.info "------------------------"
+Rails.logger.info "----- FRESH START! -----"
+Rails.logger.info "------------------------"
+
 # Generate models and tables, according to the domain model.
 # TODO!
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+# Insert into Studios
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+# Insert into Movies
+warner = Company.find_by({ "name" => "Warner Bros." })
+
+new_movie = Movie.new
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = 2005
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = warner["id"]
+new_movie.save
+
+new_movie2 = Movie.new
+new_movie2["title"] = "The Dark Knight"
+new_movie2["year_released"] = 2008
+new_movie2["rated"] = "PG-13"
+new_movie2["studio_id"] = warner["id"]
+new_movie2.save
+
+new_movie3 = Movie.new
+new_movie3["title"] = "The Dark Knight Rises"
+new_movie3["year_released"] = 2012
+new_movie3["rated"] = "PG-13"
+new_movie3["studio_id"] = warner["id"]
+new_movie3.save
+
+# Insert into Actors
+
+# Insert into Roles
 
 # Prints a header for the movies output
 puts "Movies"
