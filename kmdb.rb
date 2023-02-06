@@ -286,6 +286,17 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+for movie in Movies
+    # read each movie's title, year released, rating, and studio columns
+    title = movie["title"]
+    year = movie["year_released"]
+    rating = movie["rated"]
+    #studio = studio["name"]
+    
+    # display the first_name and last_name
+    puts "#{title}   #{year}    #{rating}"
+  end
+
 
 # Prints a header for the cast output
 puts ""
