@@ -286,17 +286,12 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
-for movie in Movies
-    # read each movie's title, year released, rating, and studio columns
-    title = movie["title"]
-    year = movie["year_released"]
-    rating = movie["rated"]
-    #studio = studio["name"]
-    
-    # display the first_name and last_name
-    puts "#{title}   #{year}    #{rating}"
-  end
+movies = Movie.all
 
+for movie in movies
+  studio = Studio.find(movie.studio_id)
+  puts "#{movie.title}  #{movie.year_released}  #{movie.rated}  #{studio.name}"
+end
 
 # Prints a header for the cast output
 puts ""
@@ -306,3 +301,11 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+roles = Role.all
+
+for role in roles
+  movie = Movie.find(role.movie_id)
+  actor = Actor.find(role.actor_id)
+  puts "#{movie.title}  #{actor.name}  #{role.character_name}"
+end
