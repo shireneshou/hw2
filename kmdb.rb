@@ -128,6 +128,25 @@ new_movie3["studio_id"] = warner["id"]
 new_movie3.save
 
 # Insert into Actors
+new_actor = Actor.new
+new_actor["name"] = "Christian Bale"
+new_actor.save
+
+new_actor2 = Actor.new
+new_actor2["name"] = "Michael Caine"
+new_actor2.save
+
+new_actor3 = Actor.new
+new_actor3["name"] = "Liam Neeson"
+new_actor3.save
+
+new_actor4 = Actor.new
+new_actor4["name"] = "Katie Holmes"
+new_actor4.save
+
+new_actor5 = Actor.new
+new_actor5["name"] = "Gary Oldman"
+new_actor5.save
 
 # Insert into Roles
 
