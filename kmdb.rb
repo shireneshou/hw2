@@ -104,7 +104,7 @@ new_studio["name"] = "Warner Bros."
 new_studio.save
 
 # Insert into Movies
-warner = Company.find_by({ "name" => "Warner Bros." })
+warner = Studio.find_by({ "name" => "Warner Bros." })
 
 new_movie = Movie.new
 new_movie["title"] = "Batman Begins"
